@@ -520,9 +520,19 @@ function saveNewForm() {
 
                 var hr = document.createElement("hr");
 
-                form.append(h3QuestionNumber, p, clone, hr);
+                form.append(h3QuestionNumber, p, clone, hr); 
                 formDiv.appendChild(form);
             }
+
+            var buttonSend = document.createElement("button");
+            buttonSend.innerHTML = "Send Form";
+            buttonSend.onclick = function() {
+                alert("SUCCESS ---> You sent your form!\nYour answers in the form '" + title + "' have been successfully sent");
+                cancelFormOpened(title);
+            };
+            var linebreak = document.createElement("br");
+            
+            formDiv.append(buttonSend,linebreak);
 
             //Alert
             alert("SUCCESS ---> NEW FORM SAVED!\nThe form '" + title + "' has been successfully saved");
